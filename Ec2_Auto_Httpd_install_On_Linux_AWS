@@ -1,0 +1,11 @@
+#!/bin/bash
+# Update system packages
+yum update -y
+# Install Apache HTTP Server
+yum install -y httpd
+# Enable httpd service to start at boot
+systemctl enable httpd
+# Start the httpd service
+systemctl start httpd
+# (Optional) Customize the landing page
+echo "<html><body><h1>Welcome to Bala's Apache Server</h1></body></html>" > /var/www/html/index.html
